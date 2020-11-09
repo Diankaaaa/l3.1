@@ -27,6 +27,8 @@ namespace WpfApp2
 
         private void OK_Click(object sender, RoutedEventArgs e)
         {
+        
+            try {
             //Получение данных от пользователя
             double x = double.Parse(X.Text);
             double n = double.Parse(N.Text);
@@ -55,7 +57,12 @@ namespace WpfApp2
 
             //Вывод результата
             Result.Text = (P * S).ToString();
-
+            }
+            
+           catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
